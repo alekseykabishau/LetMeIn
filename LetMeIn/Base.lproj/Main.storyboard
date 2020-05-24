@@ -26,7 +26,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vAc-Jc-Jos">
                                         <rect key="frame" x="0.0" y="64" width="275" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -35,7 +35,7 @@
                                 <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="BcE-LJ-QmN"/>
-                                    <constraint firstAttribute="height" constant="45" id="HeM-xV-RAS"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="HeM-xV-RAS"/>
                                 </constraints>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -79,18 +79,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZWI-pG-QLy">
+                                <rect key="frame" x="112.5" y="90" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Zad-hL-g65"/>
+                                    <constraint firstAttribute="height" constant="150" id="iCP-AS-Zb4"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="kH9-MR-pS5" firstAttribute="centerX" secondItem="IKK-8a-JFe" secondAttribute="centerX" id="1CK-Xc-yJU"/>
-                            <constraint firstItem="ZPF-Lv-g7i" firstAttribute="trailing" secondItem="kH9-MR-pS5" secondAttribute="trailing" constant="60" id="7LJ-jJ-nt0"/>
+                            <constraint firstItem="ZPF-Lv-g7i" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="kH9-MR-pS5" secondAttribute="trailing" constant="60" id="7LJ-jJ-nt0"/>
                             <constraint firstItem="kH9-MR-pS5" firstAttribute="centerY" secondItem="IKK-8a-JFe" secondAttribute="centerY" id="Ce4-Vp-R4Z"/>
-                            <constraint firstItem="kH9-MR-pS5" firstAttribute="leading" secondItem="ZPF-Lv-g7i" secondAttribute="leading" constant="60" id="CiK-nr-t0c"/>
+                            <constraint firstItem="kH9-MR-pS5" firstAttribute="leading" relation="lessThanOrEqual" secondItem="ZPF-Lv-g7i" secondAttribute="leading" constant="60" id="CiK-nr-t0c"/>
+                            <constraint firstItem="ZWI-pG-QLy" firstAttribute="top" secondItem="ZPF-Lv-g7i" secondAttribute="top" constant="90" id="pec-5A-vb6"/>
+                            <constraint firstItem="ZWI-pG-QLy" firstAttribute="centerX" secondItem="IKK-8a-JFe" secondAttribute="centerX" id="vML-wF-Edj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZPF-Lv-g7i"/>
                     </view>
                     <navigationItem key="navigationItem" id="5sB-NE-JG3"/>
                     <connections>
+                        <outlet property="avatarImageView" destination="ZWI-pG-QLy" id="Xy5-Og-8C9"/>
                         <outlet property="usernameLabel" destination="kH9-MR-pS5" id="nBm-cd-pEO"/>
                     </connections>
                 </viewController>

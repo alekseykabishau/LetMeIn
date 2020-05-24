@@ -11,12 +11,14 @@ import UIKit
 class MainAppVC: UIViewController {
 
 	@IBOutlet weak var usernameLabel: UILabel!
+	@IBOutlet weak var avatarImageView: UIImageView!
 	
-	var username: String!
+	var user: User!
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
 
-		usernameLabel.text = "Hello, \(username ?? "Unknow")!"
+		usernameLabel.text = "Hello, \(user.name)!"
+		avatarImageView.image = user.avatar
     }
 }
