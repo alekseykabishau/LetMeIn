@@ -34,7 +34,7 @@
                                 <rect key="frame" x="112.5" y="233" width="150" height="45"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="BcE-LJ-QmN"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="BcE-LJ-QmN"/>
                                     <constraint firstAttribute="height" constant="45" id="HeM-xV-RAS"/>
                                 </constraints>
                                 <state key="normal" title="Login">
@@ -58,11 +58,45 @@
                     <connections>
                         <outlet property="passwordTextField" destination="vAc-Jc-Jos" id="BqG-R4-ufH"/>
                         <outlet property="usernameTextField" destination="eKk-Ms-Efl" id="aiS-5l-Zeb"/>
+                        <segue destination="AAy-kR-eew" kind="show" identifier="segue.Main.loginToMainApp" id="ci2-xe-tac"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="138.40000000000001" y="109.29535232383809"/>
+        </scene>
+        <!--Main AppVC-->
+        <scene sceneID="y4i-id-hvo">
+            <objects>
+                <viewController id="AAy-kR-eew" customClass="MainAppVC" customModule="LetMeIn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IKK-8a-JFe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kH9-MR-pS5">
+                                <rect key="frame" x="60" y="313.5" width="255" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="kH9-MR-pS5" firstAttribute="centerX" secondItem="IKK-8a-JFe" secondAttribute="centerX" id="1CK-Xc-yJU"/>
+                            <constraint firstItem="ZPF-Lv-g7i" firstAttribute="trailing" secondItem="kH9-MR-pS5" secondAttribute="trailing" constant="60" id="7LJ-jJ-nt0"/>
+                            <constraint firstItem="kH9-MR-pS5" firstAttribute="centerY" secondItem="IKK-8a-JFe" secondAttribute="centerY" id="Ce4-Vp-R4Z"/>
+                            <constraint firstItem="kH9-MR-pS5" firstAttribute="leading" secondItem="ZPF-Lv-g7i" secondAttribute="leading" constant="60" id="CiK-nr-t0c"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZPF-Lv-g7i"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5sB-NE-JG3"/>
+                    <connections>
+                        <outlet property="usernameLabel" destination="kH9-MR-pS5" id="nBm-cd-pEO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ROj-0F-xdy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="896.79999999999995" y="109.29535232383809"/>
         </scene>
     </scenes>
 </document>

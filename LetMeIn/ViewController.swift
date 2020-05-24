@@ -18,8 +18,18 @@ class ViewController: UIViewController {
 		let deadline = DispatchTime.now() + .seconds(3)
 		DispatchQueue.main.asyncAfter(deadline: deadline) {
 			print(#function)
+			self.performSegue(withIdentifier: "segue.Main.loginToMainApp", sender: self.usernameTextField.text)
 		}
 	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if let mainAppVC = segue.destination as? MainAppVC,
+			let username = sender as? String {
+			mainAppVC.username = username
+			mainAppVC.modalPresentationStyle = .fullScreen
+		}
+	}
+	
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
